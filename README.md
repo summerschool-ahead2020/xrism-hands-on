@@ -14,18 +14,18 @@ On the Heasoft image, you have your own storage space:
 ```
 You can download the notebook and support files using this git command:
 ```
-(spex) idies@aaaa:~/workspace/Storage/<user>/persistent$ git clone https://gitlab.sron.nl/asg/xrism/heasoft-workshop.git
+(spex) idies@aaaa:~/workspace/Storage/<user>/persistent$ git clone https://github.com/summerschool-ahead2020/xrism-hands-on.git
 ```
 Then make the links to the Hitomi data and background files:
 ```
-(spex) idies@aaaa:~/workspace/Storage/<user>/persistent$ cd heasoft-workshop
-(spex) idies@aaaa:~/workspace/Storage/<user>/persistent/heasoft-workshop$ ln -s /FTP/hitomi/data/obs/1/100040030 100040030
-(spex) idies@aaaa:~/workspace/Storage/<user>/persistent/heasoft-workshop$ ln -s /FTP/hitomi/data/nxb_20170510 NXB  
+(spex) idies@aaaa:~/workspace/Storage/<user>/persistent$ cd xrism-hands-on
+(spex) idies@aaaa:~/workspace/Storage/<user>/persistent/xrism-hands-on$ ln -s /FTP/hitomi/data/obs/1/100040030 100040030
+(spex) idies@aaaa:~/workspace/Storage/<user>/persistent/xrism-hands-on$ ln -s /FTP/hitomi/data/nxb_20170510 NXB
 ```
 
 ## Running the notebook
 
-For running the Analyze_Perseus notebook, please select the (spex) kernel from the drop down menu on the top right. You need to replace '(heasoft)' with '(spex)'. It may be necessary to restart the image for Jupyter to correctly start the (spex) environment. 
+For running the Analyze_Perseus notebook, please select the (spex) kernel from the drop down menu on the top right. You need to replace '(heasoft)' with '(spex)'. It may be necessary to restart the image for Jupyter to correctly start the (spex) environment.
 
 If the (spex) environment is not properly loaded, SPEX will not be able to start. It took me some trouble to make sure that the `(spex)` jupyter kernel also activates the `spex` conda environment. This should be done automatically, but for some reason it was still running in the `heasoft` environment for some time.
 
@@ -35,7 +35,7 @@ We made the following modifications before successfully running it:
 ```
 {
  "argv": [
-  "conda", "run", "--no-capture-output", "-n", "spex",  
+  "conda", "run", "--no-capture-output", "-n", "spex",
   "/home/idies/miniconda3/envs/spex/bin/python",
   "-m",
   "ipykernel_launcher",
